@@ -13,7 +13,7 @@ DEVICE_PATH := device/motorola/miami
 TARGET_BOOTLOADER_BOARD_NAME := miami
 
 # Display
-TARGET_SCREEN_DENSITY := 400
+TARGET_SCREEN_DENSITY := 420
 
 # Fingerprint
 TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.miami
