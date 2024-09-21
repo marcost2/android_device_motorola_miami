@@ -11,18 +11,18 @@ DEVICE_PATH := device/motorola/miami
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
+TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := kryo300
+TARGET_CPU_VARIANT := cortex-a76
+TARGET_CPU_VARIANT_RUNTIME := cortex-a76
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
+TARGET_2ND_CPU_VARIANT := cortex-a55
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a5
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := miami
@@ -36,7 +36,7 @@ SOONG_CONFIG_qtidisplay_udfps := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.hab.product=miami
-TARGET_KERNEL_CONFIG := vendor/aicp_miami_defconfig
+TARGET_KERNEL_CONFIG := vendor/lineage_miami_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/miami
 
 # Kernel Modules
