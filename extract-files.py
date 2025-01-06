@@ -20,7 +20,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'vendor/motorola/sm7325-common',
+    'vendor/motorola/sm6375-common',
     'hardware/qcom-caf/sm8350',
     'hardware/qcom-caf/wlan',
     'vendor/qcom/opensource/commonsys-intf/display',
@@ -34,28 +34,19 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'product/priv-app/MotCamera4/MotCamera4.apk': blob_fixup()
-        .apktool_patch('MotCamera4-patches'),
-    ('vendor/lib/libmot_chi_desktop_helper.so', 'vendor/lib64/libmot_chi_desktop_helper.so'): blob_fixup()
-        .add_needed('libgui_shim_vendor.so'),
 }  # fmt: skip
 
-extract_fns: extract_fns_user_type = {
-    r'(bootloader|radio)\.img': extract_star_firmware,
-}
 
 module = ExtractUtilsModule(
-    'dubai',
+    'miami',
     'motorola',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
-    extract_fns=extract_fns,
-    add_firmware_proprietary_file=True,
 )
 
 if __name__ == '__main__':
     utils = ExtractUtils.device_with_common(
-        module, 'sm7325-common', module.vendor
+        module, 'sm6375-common', module.vendor
     )
     utils.run()

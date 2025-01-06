@@ -4,25 +4,26 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/dubai
+DEVICE_PATH := device/motorola/miami
 
-# Inherit from motorola sm7325-common
-include device/motorola/sm7325-common/BoardConfigCommon.mk
+# Inherit from motorola sm6375-common
+include device/motorola/sm6375-common/BoardConfigCommon.mk
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := dubai
+TARGET_BOOTLOADER_BOARD_NAME := miami
 
 # Fingerprint
-TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.dubai
+TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.miami
 SOONG_CONFIG_qtidisplay_udfps := true
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/device_framework_matrix_dubai.xml
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest_dubai.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/device_framework_matrix_miami.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest_miami.xml
 
 # Kernel
-BOARD_KERNEL_CMDLINE += androidboot.hab.product=dubai
-TARGET_KERNEL_CONFIG += vendor/lineage_dubai.config
+BOARD_KERNEL_CMDLINE += androidboot.hab.product=miami
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+TARGET_KERNEL_CONFIG += vendor/ext_config/moto-holi-miami.config
 
 # Kernel Modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
@@ -44,7 +45,9 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # Security
-VENDOR_SECURITY_PATCH := 2024-11-01
+BOOT_SECURITY_PATCH := 2024-12-01
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
+
 
 # inherit from the proprietary version
-include vendor/motorola/dubai/BoardConfigVendor.mk
+include vendor/motorola/miami/BoardConfigVendor.mk
