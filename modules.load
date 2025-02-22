@@ -1,10 +1,7 @@
 wcd_core_dlkm.ko
-lzo-rle.ko
 wcd938x_dlkm.ko
 q6_notifier_dlkm.ko
 platform_dlkm.ko
-lzo.ko
-lzo_compress.ko
 stub_dlkm.ko
 wcd938x_slave_dlkm.ko
 swr_ctrl_dlkm.ko
@@ -23,8 +20,6 @@ aw882xx_k419.ko
 machine_dlkm.ko
 bt_fm_slim.ko
 btpower.ko
-lzo_decompress.ko
-zram.ko
 rx_macro_dlkm.ko
 va_macro_dlkm.ko
 apr_dlkm.ko
@@ -76,5 +71,3 @@ wl2864c.ko
 bq25980_mmi_iio.ko
 leds_aw2033.ko
 cps4019_wls_charger.ko
-moto_mm.ko
-moto_swap.ko
